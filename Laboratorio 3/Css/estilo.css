@@ -1,0 +1,93 @@
+body{
+
+    background-color: blue;
+    background-image: url('../img/17010-4k.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+columnas{
+    column-count:1;
+    column-gap:20px;
+    column-rule:4px double black;
+}
+
+h1{
+    font-family: 'Bruno Ace SC', cursive;
+    color: rgb(74, 129, 239);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+::placeholder { color: rgb(255, 255, 255); font-weight: bold}
+label{
+    color: rgb(74, 129, 239);
+    font-size: 32px;
+    display: block;
+    font-weight:bolder;  
+    font-stretch: semi-condensed; 
+    
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+input {
+    border:currentColor;
+    border-radius: 15px;
+    font-family: 'Bruno Ace SC', cursive;
+    font-size: 16px;
+    height: auto;
+    margin: 10;
+    outline: 0;
+    padding: 15px;
+    width: 80%;
+    background-color: #8bc5f1;
+    color: #094a7c;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+  .btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 30px auto 0 auto ;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Bruno Ace SC', cursive;
+    font-weight: 700;
+    position: static;
+  }
+  .btn:hover, .btn:focus {
+    color:rgb(8, 47, 126);
+    outline: 0;
+}
+
+.third {
+    border-color: rgb(74, 129, 239);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .third:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  }

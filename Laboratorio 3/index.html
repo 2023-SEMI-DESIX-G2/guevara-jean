@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Css/estilo.css">
+  <title>Laboratorio 2</title>
+</head>
+<body>
+ <h1>Laboratorio #3 Des IX ...</h1> 
+
+ <div >
+<h2 id="mostrar"></h2>
+ </div>
+ <section align="center" aria-colcount="2">
+  <form id="operations">
+    <div id="columnas">
+    <label for="pali">Palindromo :</label>
+    <input type="number" name="pali" id="age" placeholder="Palindromo">
+    <label for="a">Año:</label>
+    <input type="number" name="a" id="a" placeholder="1999">
+    <label for="Texto">Texto:</label>
+    <input type="text" name="str" id="str" placeholder="AaaBbCcc">
+    <label for="b">Numero:</label>
+    <input type="number" name="b" id="number" placeholder="Numero">
+    <button class="btn third" type="submit">Enviar</button>
+  </div>
+  </form>
+ </section>
+ <div align="center">
+  <h2 id="operations-response"></h2>
+</div>
+ <script>
+  (() => {
+    const App = {
+      htmlElements: {
+        operationsForm: document.getElementById('operations'),
+        operationsResponse: document.getElementById('operations-response'),
+      },
+      init: () => {
+        console.log('Ejecutando Respuestas ...');
+        
+        // Handlers
+        App.htmlElements.operationsForm.addEventListener(
+          'submit',
+          App.handlers.operationsForm
+        );
+      },
+      methods: {
+        convertToBinary1 ({pali}) {
+        let num = pali;
+        let binary = (num % 2).toString();
+        for (; num > 1; ) {
+            num = parseInt(num / 2);
+            binary =  (num % 2) + (binary);
+        }
+          var palidromo = binary.split("");
+          var reversepalidromo = binary.split("").reverse();
+          for (let index = 0; index < palidromo.length; index++) {
+          if(palidromo[index] == reversepalidromo[index]){
+              var bool = true
+            }else{ 
+              var bool = false 
+              break}
+          }
+          if(bool == true)
+            console.log("Es un Palindromo >> "+binary)
+          else
+          console.log("No es un Palindromo >> "+binary)
+      },
+      sumPrimes({b}){
+            let sum = 0
+            const isprime = n => {
+                for(let i = 2  ; i < n ; i++)
+                    if(n % i === 0) return false
+                return n ;
+            }
+
+            for (i = 2; i<= b; i++){
+                if(isprime(i)){
+                    sum += i;
+                    console.log("+"+i);
+                }
+            }
+            console.log("La Suma de los Numeros primos es de: "+sum);
+        },
+        validarBisiesto({a}) {
+          // Problema 3
+          if (((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0))
+          respuesta =console.log("El Año es Bisiesto")
+          else
+          respuesta = console.log("El Año no es Bisiesto")
+          return respuesta
+        },
+        contarCaracteres({str}) {
+        str = str.replace(/\s/g, "");
+        final = {} 
+        for(let char in str){ 
+            if(str[char] in final) { 
+                final[str[char]] = final[str[char]] + 1
+            } else { 
+                final[str[char]] = 1
+            }
+        }
+        tmp = ``
+        Object.keys(final).forEach(function(letra){
+            tmp += `La cantidad de ${letra} es: ${final[letra]} \n`
+        })
+        return console.log(tmp)
+        }
+      },
+      handlers: {
+        operationsForm(event){
+            event.preventDefault();
+            const a = parseInt(event.target.a.value);
+            const b = parseInt(event.target.b.value);
+            const pali = parseInt(event.target.pali.value);
+            const str = (event.target.str.value);
+            App.methods.convertToBinary1({pali});
+            App.methods.contarCaracteres({str});
+            App.methods.validarBisiesto({a});
+            App.methods.sumPrimes({b})
+        }
+      }
+    }
+    App.init();
+  })();
+ </script>
+</body>
+</html>
