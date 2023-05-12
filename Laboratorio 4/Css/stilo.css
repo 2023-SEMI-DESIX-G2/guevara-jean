@@ -1,0 +1,101 @@
+
+body{
+  background: linear-gradient(90deg, rgb(87, 80, 80) 0%, rgb(36, 3, 39) 100%);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(5, 228, 35);
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  min-height: 100%;
+  padding: 40px;
+}
+  .card-respond{
+    display: flex;
+    justify-content: normal;
+    flex-direction: row;
+    min-height: 100%;
+    max-width: fit-content;
+    background-color: #63035b;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 1px 2px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid rgb(5, 228, 35);
+    width: 5vw;
+    height: 5vh;
+    font-size: 5vh;
+    border-radius: 10px;
+  }
+
+  section{
+    display: flex;
+    justify-content: center; 
+  }
+
+  label{
+    font-size: 4vh;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    left: 45%;
+    bottom: 35%;
+  }
+
+  input {
+    border:currentColor;
+    border-radius: 15px;
+    font-family: 'Bruno Ace SC', cursive;
+    font-size: 20px;
+    height: auto;
+    outline: 0;
+    padding: 20px;
+    width: auto;
+    background-color: #63035b;
+    color: rgb(5, 228, 35);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+  .btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Bruno Ace SC', cursive;
+    font-weight: 700;
+  }
+  .btn:hover, .btn:focus {
+    color:rgb(5, 228, 35);
+    outline: 0;
+}
+
+.third {
+    border-color: rgb(22, 224, 100);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 40px 40px #63035b inset, 0 0 0 0 #28c002;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .third:hover {
+    box-shadow: 0 0 10px 0 #28c002 inset, 0 0 10px 4px #28c002;
+  }
