@@ -19,9 +19,8 @@ div {
     min-height: 100%;
     max-width: fit-content;
     background-color: #63035b;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 8px 4px rgb(5, 228, 35);
     transition: 0.3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 1px 2px;
     margin: 10px 10px 10px 10px;
     border: 2px solid rgb(5, 228, 35);
@@ -47,6 +46,7 @@ div {
 
   input {
     border:currentColor;
+    pointer-events: visibleFill;
     border-radius: 15px;
     font-family: 'Bruno Ace SC', cursive;
     font-size: 20px;
