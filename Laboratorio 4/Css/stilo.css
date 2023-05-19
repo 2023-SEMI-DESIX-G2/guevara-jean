@@ -6,29 +6,29 @@ body{
 }
 
 div {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  min-height: 100%;
-  padding: 40px;
+  display: block;
+  column-count: 4;
+  align-content: center;
+  padding: 20px;
 }
   .card-respond{
     display: flex;
-    justify-content: normal;
-    flex-direction: row;
-    min-height: 100%;
-    max-width: fit-content;
+    justify-content: center;
+    /* flex-direction: row; */
+    /* min-height: 100%; */
+    /* max-width: fit-content; */
     background-color: #63035b;
-    box-shadow: 8px 4px rgb(5, 228, 35);
+    /* box-shadow: 8px 4px rgb(5, 228, 35); */
     transition: 0.3s;
-    padding: 1px 2px;
-    margin: 10px 10px 10px 10px;
+    /* padding: 1px 2px; */
+    margin: 0px 10px 10px 0px;
     border: 2px solid rgb(5, 228, 35);
-    width: 5vw;
-    height: 5vh;
-    font-size: 5vh;
+    /* width: 5vw; */
+    /* height: 5vh; */
+    /* font-size: 5vh; */
     border-radius: 10px;
-  }
+    align-content: center;
+}
 
   section{
     display: flex;
@@ -39,9 +39,10 @@ div {
     font-size: 4vh;
     font-weight: bold;
     color: white;
-    position: relative;
-    left: 45%;
-    bottom: 35%;
+    display: flex;
+    position: sticky;
+    left: 95%;
+    justify-content: flex-end;
   }
 
   input {
