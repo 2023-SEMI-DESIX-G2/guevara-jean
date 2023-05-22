@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/style.css">
+    <title>Laboratorio 5</title>
+</head>
+<body>
+    <H1 align="center">Calcular Promedios </H1>
+    <div class="respondsive">
+    <form class="form">
+        <div class="response">
+            <input type="number" class="calcular" name="num"> </input>
+        </div>
+        <div class="agregar">
+        <button type="click" class="btn third">Agregar +</button>
+        </div>
+        <div>
+            <button type="submit" class="btn third">Calcular (+/)</button>
+        </div>
+    </form>
+    </div>
+    <section>
+    <div class="resultado">
+        
+    </div>
+    </section>
+    <script>
+        (() => {
+            const App = {
+                htmlElements: {
+                    form: document.querySelector('.form'),
+                    response: document.querySelector('.response'),
+                    agregar: document.querySelector('.agregar'),
+                    resultado: document.querySelector('.resultado'),
+                },
+                init() {
+                    App.htmlElements.agregar.addEventListener("click", App.handlers.onClick);
+                    App.htmlElements.form.addEventListener("submit", App.handlers.onFormSubmitCalcular);
+                },
+                handlers: {
+                    onClick(e) {
+                        e.preventDefault()
+                                App.htmlElements.response.innerHTML += "<input type="+'number'+" class="+'calcular'+" name="+'num'+"></input>"
+                    },
+                    onFormSubmitCalcular(event){
+                    event.preventDefault();
+                    const numeros = [...App.htmlElements.form.querySelectorAll('.calcular')];
+                    const suma = numeros.reduce((acumulador, numero) => acumulador + Number(numero.value), 0);
+                    const promedio = suma / numeros.length;
+                    App.htmlElements.resultado.innerHTML = 
+                    App.htmlElements.resultado.innerHTML = `<h2>El promedio es: ${promedio}</h2>`+'<div class="progress">'+
+                    '<div class="progress-value" style="width: '+promedio+'%;">'+promedio+'%</div>'
+                    '</div>';
+                    }
+                }
+            };
+            App.init();
+        })();
+    </script>
+</body>
+</html>

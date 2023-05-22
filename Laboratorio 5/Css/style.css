@@ -1,0 +1,109 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+  }
+  div{
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+  }
+  .respondsive{
+    display: flex;
+    justify-content:center;
+  }
+  .response{
+    flex-direction: column;
+  }
+  .calcular{
+    display: flex;
+    justify-content:center;
+  }
+  .resultado.resultado {
+    flex-direction: column;
+    /* position: relative; */
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    /* align-content: stretch; */
+    /* flex-wrap: nowrap; */
+  }
+  
+  .progress {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 40px;
+    width: 500px;
+  }
+  
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: #fff;
+    color: black;
+      font-family: cursive;
+      font-size: larger;
+    margin-bottom: 15px;
+    height: 30px;
+    width: 0;
+  }
+  
+  @keyframes load {
+    0% { width: 0; }
+    
+  }
+  
+  input{
+    margin-bottom: 15px;
+    color: #fff;
+    background-color: black;
+    border-radius: 25px;
+    font-family: cursive;
+    text-align-last: center;
+    border: solid;
+    font-size: large;
+    border-color: rgb(255, 255, 255);
+  }
+  
+  
+  .btn {
+    /* box-sizing: border-box; */
+    /* appearance: none; */
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    /* color: #e74c3c; */
+    cursor: pointer;
+    display: inline-block;
+    /* -webkit-align-self: center; */
+    -ms-flex-item-align: center;
+    align-self: center;
+    /* font-size: 1rem; */
+    /* font-weight: 400; */
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    /* font-family: 'Bruno Ace SC', cursive; */
+    font-weight: 700;
+  }
+  .btn:hover, .btn:focus {
+    color:rgb(255, 255, 255);
+    outline: 0;
+  }
+  
+  .third {
+    border-color: rgb(248 248 248);
+    color: rgb(255, 255, 255);
+    /* box-shadow: 0 0 40px 40px #63035b inset, 0 0 0 0 #28c002; */
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .third:hover {
+    box-shadow: 0 0 10px 0 #ffffff inset, 0 0 10px 4px #ffffff;
+  }
