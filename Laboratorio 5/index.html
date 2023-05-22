@@ -28,37 +28,46 @@
     </div>
     </section>
     <script>
-        (() => {
-            const App = {
-                htmlElements: {
-                    form: document.querySelector('.form'),
-                    response: document.querySelector('.response'),
-                    agregar: document.querySelector('.agregar'),
-                    resultado: document.querySelector('.resultado'),
+    (() => {
+        const App = {
+            htmlElements: {
+                form: document.querySelector('.form'),
+                response: document.querySelector('.response'),
+                agregar: document.querySelector('.agregar'),
+                resultado: document.querySelector('.resultado'),
+            },
+            init() {
+                App.htmlElements.agregar.addEventListener("click", App.handlers.onClick);
+                App.htmlElements.form.addEventListener("submit", App.handlers.onFormSubmitCalcular);
+            },
+            methods: {
+                showNewInput(){
+                App.htmlElements.response.innerHTML += "<input type="+'number'+" class="+'calcular'+" name="+'num'+"></input>"
                 },
-                init() {
-                    App.htmlElements.agregar.addEventListener("click", App.handlers.onClick);
-                    App.htmlElements.form.addEventListener("submit", App.handlers.onFormSubmitCalcular);
-                },
-                handlers: {
-                    onClick(e) {
-                        e.preventDefault()
-                                App.htmlElements.response.innerHTML += "<input type="+'number'+" class="+'calcular'+" name="+'num'+"></input>"
-                    },
-                    onFormSubmitCalcular(event){
-                    event.preventDefault();
-                    const numeros = [...App.htmlElements.form.querySelectorAll('.calcular')];
-                    const suma = numeros.reduce((acumulador, numero) => acumulador + Number(numero.value), 0);
-                    const promedio = suma / numeros.length;
-                    App.htmlElements.resultado.innerHTML = 
-                    App.htmlElements.resultado.innerHTML = `<h2>El promedio es: ${promedio}</h2>`+'<div class="progress">'+
-                    '<div class="progress-value" style="width: '+promedio+'%;">'+promedio+'%</div>'
-                    '</div>';
-                    }
+                showAverage(){
+                const numeros = [...App.htmlElements.form.querySelectorAll('.calcular')];
+                //se usa reduce() para devolver la suma de todos los elementos en una maatriz en este caso numeros[]<<
+                const suma = numeros.reduce((acumulador, numero) => acumulador + Number(numero.value), 0);
+                const promedio = suma / numeros.length;
+                App.htmlElements.resultado.innerHTML = 
+                `<h2>El promedio es: ${promedio}</h2>`+'<div class="progress">'+
+                '<div class="progress-value" style="width: '+promedio+'%;">'+promedio+'%</div>'
+                '</div>';
                 }
-            };
-            App.init();
-        })();
+            },
+            handlers: {
+                onClick(e) {
+                    e.preventDefault()
+                    App.methods.showNewInput();
+                },
+                onFormSubmitCalcular(event){
+                    event.preventDefault();
+                    App.methods.showAverage();
+                }
+            }
+        };
+        App.init();
+    })();
     </script>
 </body>
 </html>
