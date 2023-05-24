@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio #2</title>
+    <style>
+body{
+    background-image: url('https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png');
+    background-position: center 240px;
+    background-size: 320pt;
+    background-repeat: no-repeat;
+}
+div {
+  border-radius: 20px 20px 20px 20px;
+}
+p{
+    color: rgb(255, 255, 255);
+    font-style: oblique;
+    font-size: x-large;
+    font-variant: small-caps;
+}
+    </style>
+</head>
+<body style="background-color:#0b9d2d;">
+    <h1 align="center">¿Qué es Javascript y en qué se asemeja a Java? </h1>
+        <div style="background-color:#000000;"> 
+            <p align="center"> 
+                JavaScript es un lenguaje de programación interpretado, Se define como orientado a objetos, es basado en prototipos, imperativo, débilmente tipado y dinámico.
+                Se utiliza principalmente del lado del cliente, implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y páginas web dinámicas. En lo que se asemeja Java a JavaScript es en la programacion orientada a objetos, por lo demos son 2 lenguajes totalmente diferentes. 
+            </p>
+        </div>
+
+    
+    
+    <script>
+    // Declarar dos variables con la palabra reservada "var", imprimir el resultado de las operaciones de "Suma", "Resta", "Multiplicación" y "División" en la consola. Las variables pueden ser estáticas. (10pts)
+
+    console.log("\nProblema 2 \n")
+    var Numero_1 = 100
+    var Numero_2 = 20
+
+    console.log("La Suma de los 2 Numeros es de : "+ (Numero_1 + Numero_2))
+    console.log("La Resta de los 2 Numeros es de : "+ (Numero_1 - Numero_2))
+    console.log("La Multiplicacion de los 2 Numeros es de : "+ (Numero_1 * Numero_2))
+    console.log("La Division de los 2 Numeros es de : "+ (Numero_1 / Numero_2))
+    //Declarar dos variables con la palabra reservada "let", imprimir la concatenación de ellas. (10pts)
+    console.log("\nProblema 3 \n")
+    let nombre = 'Jean Paul'
+    let apellido = 'Guevara '
+    console.log("Mi Nombre completo es "+nombre+"\n Mi Apellido es "+apellido)
+    //Declarar dos variables con la palabra reservada "const", imprimir cuál es el tipo de dato de esa variable. (10pts)
+    console.log("\nProblema 4 \n")
+    const numero = 10 
+    const frase = "Hola como estas"
+    console.log("Tipo de Dato> "+typeof(numero))
+    console.log("Tipo de Dato> "+typeof(frase))
+    //Declarar una variable tipo Objeto, colocar 4 llaves dentro de él que contengan un number, un string, un booleano y un objeto vacío, en ese mismo orden. (10pts)
+    console.log("\nProblema 5 \n")
+        var carro = { 
+            serie: 123,
+            miCarro: "Saturn",
+            getCarro: true, 
+            especial: null
+        };
+        console.log(carro)
+        //Escribir una función en JS que tome un número entero positivo como argumento y devuelva la suma de todos los números menores que sean múltiplos de 3 o 5. Por ejemplo: Si el número dado es 10, la función debería devolver la suma de 3, 5, 6 y 9, que es 23. (50 pts)
+        console.log("\nProblema 6 \n")
+            var sumatotal = 0
+            function multiple(numero, multiple)
+            {
+                resto = numero % multiple;
+                if(resto==0){
+                    sumatotal += numero
+                    return true;}
+                else
+                    return false;
+            }
+            for(var i=1;i<10;i++)
+            {
+                multiple(i,3)
+                multiple(i,5)
+            }
+            console.log("La Suma total es de:",sumatotal)
+            </script>
+</body>
+</html>
