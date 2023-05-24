@@ -10,9 +10,9 @@
                     for (let x = 2; x <= fibonacci; x++){
                     fib[x] = fib[x - 2] + fib[x - 1]
                     }
-                    for (let x = 0; x < fib.length; x++){
-                        console.log("# "+fib[x])
-                    }
+                    fib.forEach(element => {
+                        console.log("#"+element)
+                    });
                 }
             },
         }
