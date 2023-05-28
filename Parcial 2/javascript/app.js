@@ -37,10 +37,14 @@
                 let poke11 = json3.chain.species.name
                 let poke12= json3.chain.evolves_to[0].species.name
                 let poke13= json3.chain.evolves_to[0].evolves_to[0].species.name
+                let poke14= json3.chain.is_baby
+                var poke15 = ""
+                if(poke14 === true){
+                    var poke15 = `<img class="img-baby" src="./Imagenes/baby.svg">` }
             App.htmlElements.resultado.innerHTML = `<div class="pokedeks"> <h1>${poke1} Id(${poke2})</h1>
             <div class="div-space"><img class="img-poke" src="${poke5}"><img class="img-poke2" src="${poke7}"><h2>Sprites</h2></div>
             <div class="div-space2"><h2>Height/Weight</h2><h2>${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
-            <li>${poke11}</li><li>${poke12}</li><li>${poke13}</li></div><div class="div-space5"><ul>
+            <li >${poke11} ${poke15}</li><li>${poke12}</li><li>${poke13}</li></div><div class="div-space5"><ul>
             <li>${poke8}</li><li>${poke9}</li></ul></div></div>
             </div>`
             }
