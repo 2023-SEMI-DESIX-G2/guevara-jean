@@ -35,8 +35,27 @@
                 let evolution = await fetch(poke10)
                 let json3 = await evolution.json()
                 let poke11 = json3.chain.species.name
-                let poke12= json3.chain.evolves_to[0].species.name
-                let poke13= json3.chain.evolves_to[0].evolves_to[0].species.name
+                var eevee = ""
+                if (json3.chain.evolves_to[0] != undefined) {
+                    var poke12= json3.chain.evolves_to[0].species.name
+                    if (json3.chain.evolves_to[0].evolves_to[0] != undefined)
+                    var poke13= json3.chain.evolves_to[0].evolves_to[0].species.name
+                }else{
+                    var poke12 = "No more Evolution"
+                    var poke13 = "No more Evolution"
+                }
+                if (json3.chain.evolves_to[1] != undefined) {
+                    var poke13 = json3.chain.evolves_to[1].species.name
+                }
+                if (json3.chain.evolves_to[2] != undefined) {
+                    var poke13 = json3.chain.evolves_to[2].species.name
+                    var poke16 = json3.chain.evolves_to[3].species.name
+                    var poke17 = json3.chain.evolves_to[4].species.name
+                    var poke18 = json3.chain.evolves_to[5].species.name
+                    var poke19 = json3.chain.evolves_to[6].species.name
+                    var poke20 = json3.chain.evolves_to[7].species.name
+                    var eevee = `<li>${poke16}</li><li>${poke17}</li><li>${poke18}</li><li>${poke19}</li><li>${poke20}</li>`
+                }
                 let poke14= json3.chain.is_baby
                 var poke15 = ""
                 if(poke14 === true){
@@ -44,7 +63,7 @@
             App.htmlElements.resultado.innerHTML = `<div class="pokedeks"> <h1>${poke1} Id(${poke2})</h1>
             <div class="div-space"><img class="img-poke" src="${poke5}"><img class="img-poke2" src="${poke7}"><h2>Sprites</h2></div>
             <div class="div-space2"><h2>Height/Weight</h2><h2>${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
-            <li >${poke11} ${poke15}</li><li>${poke12}</li><li>${poke13}</li></div><div class="div-space5"><ul>
+            <li >${poke11} ${poke15}</li><li>${poke12}</li><li>${poke13}</li>${eevee}</div><div class="div-space5"><ul>
             <li>${poke8}</li><li>${poke9}</li></ul></div></div>
             </div>`
             }
