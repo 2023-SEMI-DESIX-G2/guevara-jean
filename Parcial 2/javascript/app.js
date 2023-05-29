@@ -72,7 +72,7 @@
                     var poke18 = json3.chain.evolves_to[5].species.name
                     var poke19 = json3.chain.evolves_to[6].species.name
                     var poke20 = json3.chain.evolves_to[7].species.name
-                    var eevee = `<li>${poke16}</li><li>${poke17}</li><li>${poke18}</li><li>${poke19}</li><li>${poke20}</li>`
+                    var eevee = `<li class="li1">${poke16}</li><li class="li1">${poke17}</li><li class="li1">${poke18}</li><li class="li1">${poke19}</li><li class="li1">${poke20}</li>`
                 }
                 let poke14= json3.chain.is_baby
                 var poke15 = ""
@@ -80,9 +80,9 @@
                     var poke15 = `<img class="img-baby" src="./Imagenes/baby.svg">` }
             App.htmlElements.resultado.innerHTML = `<div class="pokedeks"> <h1>${poke1} Id(${poke2})</h1>
             <div class="div-space"><img class="img-poke" src="${poke5}"><img class="img-poke2" src="${poke7}"><h2>Sprites</h2></div>
-            <div class="div-space2"><h2>Height/Weight</h2><h2>${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
-            <li >${poke11} ${poke15}</li><li>${poke12}</li><li>${poke13}</li>${eevee}</div><div class="div-space5"><ul>
-            <li>${poke8} ${hidden2}</li><li>${poke9} ${hidden1}</li><li>${poke21} ${hidden3}</li></ul></div></div>
+            <div class="div-space2"><h2>Height/Weight</h2><h2 style="color: black;" >${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
+            <li class="li1">${poke11} ${poke15}</li><li class="li1">${poke12}</li><li class="li1">${poke13}</li>${eevee}</div><div class="div-space5"><ul>
+            <li class="li2">${poke8} ${hidden2}</li><li class="li2">${poke9} ${hidden1}</li><li class="li2">${poke21} ${hidden3}</li></ul></div></div>
             </div>`
             }
         },
