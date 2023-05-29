@@ -27,8 +27,26 @@
                 let poke5 = json.sprites.front_default
                 let poke6 = json.species.url
                 let poke7 = json.sprites.back_default
+                var hidden1 = ""
+                var hidden2 = ""
+                var hidden3 = ""
                 let poke8 = json.abilities[0].ability.name
-                let poke9 = json.abilities[1].ability.name
+                if (json.abilities[1] != undefined) {
+                    var poke9 = json.abilities[1].ability.name
+                    if(json.abilities[1].is_hidden === true){
+                        var hidden1 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
+                } else {
+                    var poke9 = "No more Ability"
+                }
+                if (json.abilities[2] != undefined) {
+                    var poke21 = json.abilities[2].ability.name
+                    if(json.abilities[2].is_hidden === true){
+                        var hidden3 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
+                } else {
+                    var poke21 = "No more Ability"
+                }
+                if(json.abilities[0].is_hidden === true){
+                        var hidden2 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
                 let species = await fetch(poke6)
                 let json2 = await species.json()
                 let poke10 = json2.evolution_chain.url
@@ -64,7 +82,7 @@
             <div class="div-space"><img class="img-poke" src="${poke5}"><img class="img-poke2" src="${poke7}"><h2>Sprites</h2></div>
             <div class="div-space2"><h2>Height/Weight</h2><h2>${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
             <li >${poke11} ${poke15}</li><li>${poke12}</li><li>${poke13}</li>${eevee}</div><div class="div-space5"><ul>
-            <li>${poke8}</li><li>${poke9}</li></ul></div></div>
+            <li>${poke8} ${hidden2}</li><li>${poke9} ${hidden1}</li><li>${poke21} ${hidden3}</li></ul></div></div>
             </div>`
             }
         },
