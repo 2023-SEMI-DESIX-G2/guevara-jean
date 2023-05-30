@@ -12,10 +12,11 @@
     <section>
         <form class="form">
             <div class="space">
-                <input type="text" name="poke" placeholder="Pokemon">
-                <select name="pokemon" id="id">
-                    <option value="pokemon" selected>Pokemon</option>
-                    <option value="ability">Abilities</option>
+                <input type="text" name="poke" placeholder="Pokemon" id="buscador" disabled>
+                <select name="Busquedad" id="typeShear">
+                    <option value="0">Busquedad</option>
+                    <option value="1">Pokemon</option>
+                    <option value="2">Abilities</option>
                 </select>
                 <div class="space-btn">
                     <button id="btn">Buscar<img class="img-pokeball" src="./Imagenes/pokeball.svg" alt=""></button> 
@@ -26,9 +27,10 @@
     </section>
     <div class="pokeball-up">
     </div>
-    <div class="resultado"></div>
+    <div class="resultado" id="results"></div>
     <div class="pokeball-button">
     </div>
     <script src="./javascript/app.js"></script>
+    <script src="./javascript/utils.js"></script>
 </body>
 </html>

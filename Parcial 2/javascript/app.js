@@ -17,9 +17,11 @@
             App.htmlElements.resultado.innerHTML = ""
             },
             async showAverage({poke}){
-              const pokemon = poke.toLowerCase()
-              let respond = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-              let json = await respond.json()
+                const sb = document.querySelector('#typeShear')
+                if(sb.selectedIndex == 1){
+                const pokemon = poke.toLowerCase()
+                let respond = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+                let json = await respond.json()
                 let poke1 = json.name
                 let poke2 = json.id
                 let poke3 = json.height
@@ -84,6 +86,39 @@
             <li class="li1">${poke11} ${poke15}</li><li class="li1">${poke12}</li><li class="li1">${poke13}</li>${eevee}</div><div class="div-space5"><ul>
             <li class="li2">${poke8} ${hidden2}</li><li class="li2">${poke9} ${hidden1}</li><li class="li2">${poke21} ${hidden3}</li></ul></div></div>
             </div>`
+            }
+            if(sb.selectedIndex == 2){
+                const pokemon = poke.toLowerCase()
+                let respond = await fetch("https://pokeapi.co/api/v2/ability?offset=0&limit=358")
+                let json = await respond.json()
+                for (let x = 0; x <= 358; x++) {
+                    const abilitylist = json.results[x].name
+                    
+                    if (abilitylist == pokemon) {
+                        console.log(abilitylist)
+                        var poke1 = abilitylist
+                        var poke2 = json.results[x].url
+                        break;
+                    }
+            }
+                let ability = await fetch(poke2)
+                let json2 = await ability.json()       
+                    //cardsContainer.innerHTML = "";
+                    const pokeab = json2.pokemon
+                    App.htmlElements.resultado.innerHTML = `<div class="pokedeks2" id="pokedeks"><h2>Ability ${poke1}</h2> </div>`
+                    for (let x = 0; x < pokeab.length; x++) {
+                        const cardsContainer = document.getElementById("pokedeks");
+                        const element = json2.pokemon[x].pokemon.name;
+                        console.log(element)
+                        const card = document.createElement("li");
+                        card.classList.add("list-ability");
+                        if(json2.pokemon[x].is_hidden === true){
+                        var hidden = `<img class="img-baby" src="./Imagenes/eyehidden.svg">`
+                        card.innerHTML = element+hidden}else{card.innerHTML = element
+                        }
+                        cardsContainer.appendChild(card); 
+                    }
+            }
             }
         },
         handlers: {
