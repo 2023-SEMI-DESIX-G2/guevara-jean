@@ -7,7 +7,27 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgb(247, 178, 30);
+    color: rgb(0, 0, 0);
+}
+input{
+    border: solid;
+    border-color: goldenrod;
+    border-radius: 15px;
+    width: 170px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+select{
+    border: solid;
+    border-radius: 15px;
+    width: 120px;
+    height: 40px;
+    border-color: goldenrod;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
 }
 section {
     background-image: url(../Imagenes/pokeapi_256.png);
@@ -54,7 +74,7 @@ section {
 }
 .pokedeks{
     background-color: rgb(255, 255, 255);
-    height: 500px;
+    height: 440px;
     width: 600px;
     border-radius: 25px;
     display: flex;
@@ -98,6 +118,7 @@ section {
 .div-space3{
     height: 20px;
     width: 600px;
+    padding-bottom: 10px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -106,6 +127,7 @@ section {
 .div-space4{
     height: auto;
     width: 300px;
+    padding-bottom: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,13 +144,13 @@ section {
 .img-poke{
     background-position-y: 15px;
     position: relative;
-    right: 35px;
+    right: 30px;
     bottom: 97px;
 }
 .img-poke2{
     background-position-y: 15px;
     position: relative;
-    left: 35px;
+    left: 30px;
 }
 .img-baby{
     height: 19px;
@@ -170,22 +192,93 @@ button{
     left: 8px;
 }
 .li1{
-    color: black;
+    color: rgb(255, 0, 0);
     font-weight: bold;
+    font-size: 19px;
     align-items: center;
     align-self: flex-start;
     position: relative;
     left: 115px;
+    top: 10px;
 }
 .li2{
-    color: black;
+    color: rgb(19, 22, 185);
     font-weight: bold;
+    font-size: 19px;
     align-items: center;
     align-self: flex-start;
     position: relative;
     bottom: 10px;
 }
 .list-ability{
-    color: black;
+    color: rgb(19, 22, 185);
     font-weight: bold;
+    font-size: 19px;
 }
+
+/* Poké Styles */
+.center-on-page {
+    position: relative;
+    bottom: 510px;
+  }
+
+.pokeball {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border: 10px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset -10px 10px 0 10px #ccc;
+    animation: fall .25s ease-in-out,
+               shake 1.25s cubic-bezier(.36,.07,.19,.97) 3;
+  }
+  .pokeball::before,
+  .pokeball::after {
+    content:"";
+    position: absolute;
+  }
+  .pokeball::before {
+    background: #ff0000;
+    width: 100%;
+    height: 50%;
+  }
+  .pokeball::after {
+    top: calc(50% - 10px);
+    width: 100%;
+    height: 20px;
+    background: #000;
+  }
+  .pokeball__button {
+    position: absolute;
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
+    width: 90px;
+    height: 90px;
+    background: #7f8c8d;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 10px black;
+    animation: blink .5s alternate 7;
+  }
+  /* Animation */
+  @keyframes blink {
+    from { background: #eee;}
+    to { background: #e74c3c; }
+  }
+  @keyframes shake {
+    0 { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-10px, 0) rotate(-20deg); }
+    30% { transform: translate(10px, 0) rotate(20deg); }
+    50% { transform: translate(-10px, 0) rotate(-10deg); }
+    60% { transform: translate(10px, 0) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+  }
+  @keyframes fall {
+    0% { top: -200px }
+    60% { top: 0 }
+    80% { top: -20px }
+    100% { top: 0 }
+  }

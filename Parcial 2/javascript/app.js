@@ -26,26 +26,37 @@
                 let poke2 = json.id
                 let poke3 = json.height
                 let poke4 = json.weight
-                let poke5 = json.sprites.front_default
+                if (json.height > 9) {
+                    var poke7 = `<img style="margin-left: 35px;" class="img-poke2" src="${json.sprites.back_default}">`
+                    if (json.height > 14)
+                    var poke7 = `<img style="margin-left: 45px;" class="img-poke2" src="${json.sprites.back_default}">`
+                }else{
+                    var poke7 = `<img class="img-poke2" src="${json.sprites.back_default}">`
+                }
+                if (json.height < 5) {
+                    var poke7 = `<img style="margin-rigth: 35px;" class="img-poke2" src="${json.sprites.back_default}">`
+                }
+                let poke5 = `<img class="img-poke" src="${json.sprites.front_default}">`
                 let poke6 = json.species.url
-                let poke7 = json.sprites.back_default
                 var hidden1 = ""
                 var hidden2 = ""
                 var hidden3 = ""
                 let poke8 = json.abilities[0].ability.name
                 if (json.abilities[1] != undefined) {
-                    var poke9 = json.abilities[1].ability.name
+                    var poke9 = `<li class="li2">${json.abilities[1].ability.name} ${hidden1}</li>`
                     if(json.abilities[1].is_hidden === true){
                         var hidden1 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
+                        var poke9 = `<li class="li2">${json.abilities[1].ability.name} ${hidden1}</li>`
                 } else {
-                    var poke9 = "No more Ability"
+                    var poke9 = ""
                 }
                 if (json.abilities[2] != undefined) {
-                    var poke21 = json.abilities[2].ability.name
+                    var poke21 = `<li class="li2">${json.abilities[2].ability.name}${hidden3}</li>`
                     if(json.abilities[2].is_hidden === true){
                         var hidden3 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
+                        var poke21 = `<li class="li2">${json.abilities[2].ability.name}${hidden3}</li>`
                 } else {
-                    var poke21 = "No more Ability"
+                    var poke21 = ""
                 }
                 if(json.abilities[0].is_hidden === true){
                         var hidden2 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
@@ -56,36 +67,39 @@
                 let json3 = await evolution.json()
                 let poke11 = json3.chain.species.name
                 var eevee = ""
+                var poke13 = ""
                 if (json3.chain.evolves_to[0] != undefined) {
-                    var poke12= json3.chain.evolves_to[0].species.name
-                    if (json3.chain.evolves_to[0].evolves_to[0] != undefined)
-                    var poke13= json3.chain.evolves_to[0].evolves_to[0].species.name
+                    var poke12= `<li class="li1">${json3.chain.evolves_to[0].species.name}</li>`
+                    if (json3.chain.evolves_to[0].evolves_to[0] != undefined){
+                        var poke13= `<li class="li1">${json3.chain.evolves_to[0].evolves_to[0].species.name}</li>`
+                    }
                 }else{
-                    var poke12 = "No more Evolution"
-                    var poke13 = "No more Evolution"
+                    var poke12 = ""
+                    var poke13 = ""
                 }
+
                 if (json3.chain.evolves_to[1] != undefined) {
-                    var poke13 = json3.chain.evolves_to[1].species.name
+                    var poke13 = `<li class="li1">${json3.chain.evolves_to[1].species.name}</li>`
                 }
                 if (json3.chain.evolves_to[2] != undefined) {
-                    var poke13 = json3.chain.evolves_to[2].species.name
+                    var poke22 = json3.chain.evolves_to[2].species.name
                     var poke16 = json3.chain.evolves_to[3].species.name
                     var poke17 = json3.chain.evolves_to[4].species.name
                     var poke18 = json3.chain.evolves_to[5].species.name
                     var poke19 = json3.chain.evolves_to[6].species.name
                     var poke20 = json3.chain.evolves_to[7].species.name
-                    var eevee = `<li class="li1">${poke16}</li><li class="li1">${poke17}</li><li class="li1">${poke18}</li><li class="li1">${poke19}</li><li class="li1">${poke20}</li>`
+                    var eevee = `<li class="li1">${poke22}</li><li class="li1">${poke16}</li><li class="li1">${poke17}</li><li class="li1">${poke18}</li><li class="li1">${poke19}</li><li class="li1">${poke20}</li>`
                 }
                 let poke14= json3.chain.is_baby
                 var poke15 = ""
                 if(poke14 === true){
                     var poke15 = `<img class="img-baby" src="./Imagenes/baby.svg">` }
-            App.htmlElements.resultado.innerHTML = `<div class="pokedeks"> <h1>${poke1} Id(${poke2})</h1>
-            <div class="div-space"><img class="img-poke" src="${poke5}"><img class="img-poke2" src="${poke7}"><h2>Sprites</h2></div>
-            <div class="div-space2"><h2>Height/Weight</h2><h2 style="color: black;" >${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
-            <li class="li1">${poke11} ${poke15}</li><li class="li1">${poke12}</li><li class="li1">${poke13}</li>${eevee}</div><div class="div-space5"><ul>
-            <li class="li2">${poke8} ${hidden2}</li><li class="li2">${poke9} ${hidden1}</li><li class="li2">${poke21} ${hidden3}</li></ul></div></div>
-            </div>`
+                App.htmlElements.resultado.innerHTML = `<div class="pokedeks"> <h1 style="margin-bottom: 0px">${poke1} Id(${poke2})</h1>
+                <div class="div-space">${poke5} ${poke7}<h2>Sprites</h2></div>
+                <div class="div-space2"><h2>Height/Weight</h2><h2 style="color: black;" >${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
+                <li class="li1">${poke11} ${poke15}</li>${poke12} ${poke13} ${eevee}</div><div class="div-space5"><ul>
+                <li class="li2">${poke8} ${hidden2}</li>${poke9}${poke21}</ul></div></div>
+                </div>`
             }
             if(sb.selectedIndex == 2){
                 const pokemon = poke.toLowerCase()
@@ -93,14 +107,13 @@
                 let json = await respond.json()
                 for (let x = 0; x <= 358; x++) {
                     const abilitylist = json.results[x].name
-                    
                     if (abilitylist == pokemon) {
                         console.log(abilitylist)
                         var poke1 = abilitylist
                         var poke2 = json.results[x].url
                         break;
                     }
-            }
+                }
                 let ability = await fetch(poke2)
                 let json2 = await ability.json()       
                     //cardsContainer.innerHTML = "";
@@ -119,7 +132,7 @@
                         cardsContainer.appendChild(card); 
                     }
             }
-            }
+            },
         },
         handlers: {
             onSubmit(e) {
@@ -130,6 +143,9 @@
                 event.preventDefault();
                 const poke = event.target.elements.poke.value;
                 App.methods.showAverage({poke});
+                var capa = document.getElementById("limpiar");   
+                capa.style.display = "none";   
+                capa.style.visibility = "hidden";   
             }
         }
     };
