@@ -9,6 +9,18 @@ body{
     align-items: center;
     color: rgb(0, 0, 0);
 }
+:root {
+    --blue:  linear-gradient(180deg, rgba(13,14,222,1) 0%, rgba(44,66,224,1) 10%, rgba(225,228,255,1) 100%);
+    --yellow: linear-gradient(180deg, rgba(239,255,0,1) 0%, rgba(239,255,0,1) 10%, rgba(255,255,250,1) 100%);
+    --black: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 3%, rgba(204,249,205,1) 100%);
+    --brown: linear-gradient(180deg, rgba(96,63,5,1) 0%, rgba(153,101,10,1) 17%, rgba(255,227,177,1) 100%);
+    --gray: linear-gradient(180deg, rgba(64,62,58,1) 0%, rgba(82,78,71,1) 17%, rgba(223,220,215,1) 100%);
+    --green: linear-gradient(180deg, rgba(27,212,33,1) 0%, rgba(0,255,8,1) 10%, rgba(204,249,205,1) 100%);
+    --pink: linear-gradient(180deg, rgba(198,0,191,1) 0%, rgba(240,83,235,1) 17%, rgba(255,185,253,1) 100%);
+    --purple: linear-gradient(180deg, rgba(87,4,103,1) 0%, rgba(131,31,150,1) 17%, rgba(244,185,255,1) 100%);
+    --red: linear-gradient(180deg, rgba(167,4,4,1) 0%, rgba(255,0,0,1) 17%, rgba(255,185,185,1) 100%);
+    --white: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(175,173,173,1) 100%);
+  }
 input{
     border: solid;
     border-color: goldenrod;
@@ -35,7 +47,7 @@ section {
     background-position: top;
     height: 200px;
     display: flex;
-    background-color: #f1f1f1;
+    background-color: #df0c0c;
     padding: 30px;
     margin-bottom: 40px;
     width: 50%;
@@ -46,13 +58,13 @@ section {
 }
 
 .space{
-    background-color: #f1f1f1;
+    background-color: #df0c0c;
     margin: 10px;
     border-radius: 5px;
 }
 
 .space-btn{
-    background-color: #f1f1f1;
+    background-color: #df0c0c;
     margin: 15px;
     border-radius: 5px;
     display: flex;
@@ -73,7 +85,7 @@ section {
     padding-top: 10px;
 }
 .pokedeks{
-    background-color: rgb(255, 255, 255);
+    background-color: blanchedalmond;
     height: 440px;
     width: 600px;
     border-radius: 25px;
@@ -152,12 +164,19 @@ section {
     position: relative;
     left: 30px;
 }
+.img-type{
+    height: 55px;
+    width: 60px;
+    top: 10px;
+    position: relative;
+    margin-right: -45px;
+}
 .img-baby{
     height: 19px;
     width: 52px;
     top: 5px;
     position: relative;
-    margin-right: -43px;
+    left: -15px;
 }
 h1{
     width: 100%;
@@ -192,7 +211,7 @@ button{
     left: 8px;
 }
 .li1{
-    color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 19px;
     align-items: center;
@@ -202,7 +221,7 @@ button{
     top: 10px;
 }
 .li2{
-    color: rgb(19, 22, 185);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 19px;
     align-items: center;

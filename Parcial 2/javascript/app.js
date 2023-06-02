@@ -26,6 +26,7 @@
                 let poke2 = json.id
                 let poke3 = json.height
                 let poke4 = json.weight
+                let poketype = json.types[0].type.name
                 if (json.height > 9) {
                     var poke7 = `<img style="margin-left: 35px;" class="img-poke2" src="${json.sprites.back_default}">`
                     if (json.height > 14)
@@ -62,6 +63,7 @@
                         var hidden2 = `<img class="img-baby" src="./Imagenes/eyehidden.svg">` }
                 let species = await fetch(poke6)
                 let json2 = await species.json()
+                let color = json2.color.name
                 let poke10 = json2.evolution_chain.url
                 let evolution = await fetch(poke10)
                 let json3 = await evolution.json()
@@ -94,7 +96,7 @@
                 var poke15 = ""
                 if(poke14 === true){
                     var poke15 = `<img class="img-baby" src="./Imagenes/baby.svg">` }
-                App.htmlElements.resultado.innerHTML = `<div class="pokedeks"> <h1 style="margin-bottom: 0px">${poke1} Id(${poke2})</h1>
+                App.htmlElements.resultado.innerHTML = `<div style="background: var(--${color})" class="pokedeks"> <h1  style="margin-bottom: 0px">${poke1} Id(${poke2}) Type    <img class="img-type" src="./Imagenes/${poketype}.svg"></h1>
                 <div class="div-space">${poke5} ${poke7}<h2>Sprites</h2></div>
                 <div class="div-space2"><h2>Height/Weight</h2><h2 style="color: black;" >${poke3}/${poke4}</h2></div><div class="div-space3"><h2>Evolution Chain</h2><h2>Abilities</h2></div><div class="div-space4">
                 <li class="li1">${poke11} ${poke15}</li>${poke12} ${poke13} ${eevee}</div><div class="div-space5"><ul>
