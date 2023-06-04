@@ -22,8 +22,6 @@ body{
     --white: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(175,173,173,1) 100%);
   }
 input{
-    border: solid;
-    border-color: goldenrod;
     border-radius: 15px;
     width: 170px;
     height: 30px;
@@ -32,11 +30,9 @@ input{
     text-align: center;
 }
 select{
-    border: solid;
     border-radius: 15px;
     width: 120px;
-    height: 40px;
-    border-color: goldenrod;
+    height: 35px;
     font-size: 15px;
     font-weight: bold;
     text-align: center;
