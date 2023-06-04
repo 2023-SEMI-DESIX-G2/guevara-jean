@@ -1,5 +1,5 @@
 body{
-    background-color: crimson;
+    background-color: darkslateblue;
     background-repeat: inherit;
     font-family: 'Bruno Ace SC', cursive;
     font-family: 'Fira Sans', sans-serif;
@@ -104,7 +104,7 @@ section {
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 }
 .div-space{
     height: 120px;
@@ -179,13 +179,15 @@ h1{
     height: 35px;
     padding-left: 40px;
 }
+.h2-ab{
+    position: relative;
+    left: 230px;
+}
 .img-github{
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 55px;
     position: absolute;
     right: 12px;
-    background-color: rgb(126, 126, 126);
-    border-radius: 50px;
 }
 button{
     background-color: rgb(247, 178, 30);
@@ -229,6 +231,8 @@ button{
     color: rgb(19, 22, 185);
     font-weight: bold;
     font-size: 19px;
+    position: relative;
+    left: 230px;
 }
 
 /* Poké Styles */

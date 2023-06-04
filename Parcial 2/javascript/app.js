@@ -120,7 +120,7 @@
                 let json2 = await ability.json()       
                     //cardsContainer.innerHTML = "";
                     const pokeab = json2.pokemon
-                    App.htmlElements.resultado.innerHTML = `<div class="pokedeks2" id="pokedeks"><h2>Ability ${poke1}</h2> </div>`
+                    App.htmlElements.resultado.innerHTML = `<div class="pokedeks2" id="pokedeks"><h2 class="h2-ab">Ability ${poke1}</h2> </div>`
                     for (let x = 0; x < pokeab.length; x++) {
                         const cardsContainer = document.getElementById("pokedeks");
                         const element = json2.pokemon[x].pokemon.name;
