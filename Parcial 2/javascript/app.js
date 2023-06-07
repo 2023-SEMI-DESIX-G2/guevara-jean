@@ -14,6 +14,7 @@
             showNewInput(){
             const valido = confirm("ESTAS SEGURO QUE QUIERES HACER OTRA POKE-BUSQUEDAD")
             if(valido==true)
+            document.getElementById("buscador").value = ""
             App.htmlElements.resultado.innerHTML = ""
             },
             async showAverage({poke}){
