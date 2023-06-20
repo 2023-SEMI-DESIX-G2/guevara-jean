@@ -4,10 +4,6 @@ const utils = require("./utils");
  module.exports = {
     pokemon: {
         getCache() {
-            function out(){
-                var cache = ''
-            }
-            setTimeout(out, 5000);
             return cache;
           },
           getUrl(pokemonId) {
@@ -19,6 +15,9 @@ const utils = require("./utils");
               pokemon = cache[pokemonId];
               fromCache = true;
             } else {
+                setTimeout(() => {
+                    delete cache[pokemonId];
+                }, 300000);
                 const json = await utils.get(this.getUrl(pokemonId));
                 const json2 = await utils.get(json.species.url);
                 const json3 = await utils.get(json2.evolution_chain.url);
