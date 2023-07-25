@@ -1,0 +1,26 @@
+{
+  "name": "lab8",
+  "version": "1.0.0",
+  "description": "- Utilizar controles de flujo, ciclos y demás herramientas básicas del lenguaje Javascript.\r - Desarrollar una aplicación usando NodeJS.\r - Consumir endpoints usando fetch o axios dentro de NodeJS\r - Servir endpoints usando ExpressJS\r - I. Mostrar datos en consola (100pts)\r - Escribir una aplicación de NodeJS busque la información de un Pokemon dentro del PokeAPI (Como en el parcial 2 y laboratorio 7)\r ## Que lea del API e imprima en pantalla:\r - El nombre del pokemon\r - El id del pokedex\r - La altura y el peso\r - Las habilidades\r - Y, la cadena de evolución.\r Se va a evaluar la estructura modular del código. Puede usar de base la presentada durante clase.\r El valor de entrada debe ser dada por una ruta dinámica de express js.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mysql2": "^3.4.1",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

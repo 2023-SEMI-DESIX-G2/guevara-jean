@@ -1,0 +1,29 @@
+<ng-template #modalContent>
+  <div class="login-container">
+    <div class="image-container">
+      <img src="/assets/img/login_vector.webp" alt="Imagen">
+    </div>
+    <div class="form-container">
+      <form>
+        <h1>BIENVENIDO!</h1>
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="button-container">
+          <button type="submit" (click)="login()">Iniciar sesión</button>
+          <button type="submit" (click)="register()">Registrarse</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-container *ngIf="isVisible">
+  <nz-modal [nzVisible]="true" nzTitle="Iniciar sesión" [nzOkText]="null" [nzCancelText]="null" 
+    (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()" [nzContent]="modalContent" [nzStyle]="{ width:'1000px', display: 'flex', alignItems: 'center' }"></nz-modal>
+</ng-container>
